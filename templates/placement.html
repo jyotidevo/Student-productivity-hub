@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Tracker</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            padding:40px;
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            max-width:600px;
+            margin:auto;
+            border-radius:15px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        input, select{
+            padding:10px;
+            width:90%;
+            margin:10px 0;
+        }
+
+        button{
+            padding:10px 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>💼 Placement Preparation Tracker</h1>
+
+<form method="POST">
+
+    <label>DSA Questions Solved</label><br>
+    <input type="number" name="dsa" required>
+
+    <label>Aptitude Topics Completed</label><br>
+    <input type="number" name="aptitude" required>
+
+    <label>Mock Interviews Given</label><br>
+    <input type="number" name="mock" required>
+
+    <label>Resume Status</label><br>
+    <select name="resume">
+        <option value="yes">Completed</option>
+        <option value="no">Not Completed</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Check Readiness
+    </button>
+
+</form>
+
+{% if readiness is not none %}
+
+<h2>
+    Placement Readiness: {{ "%.2f"|format(readiness) }} %
+</h2>
+
+<h3>{{ status }}</h3>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

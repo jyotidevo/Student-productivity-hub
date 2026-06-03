@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CGPA Calculator</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            padding:40px;
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            max-width:500px;
+            margin:auto;
+            border-radius:15px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        input{
+            padding:10px;
+            width:90%;
+            margin:10px 0;
+        }
+
+        button{
+            padding:10px 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎓 CGPA Calculator</h1>
+
+<form method="POST">
+
+    <label>Semester 1 CGPA</label><br>
+    <input type="number" step="0.01" name="sem1" >
+
+    <label>Semester 2 CGPA</label><br>
+    <input type="number" step="0.01" name="sem2" >
+
+    <label>Semester 3 CGPA</label><br>
+    <input type="number" step="0.01" name="sem3" >
+
+    <label>Semester 4 CGPA</label><br>
+    <input type="number" step="0.01" name="sem4" >
+    <label>Semester 5 CGPA</label><br>
+    <input type="number" step="0.01" name="sem5" >
+
+    <label>Semester 6 CGPA</label><br>
+    <input type="number" step="0.01" name="sem6" >
+
+    <label>Semester 7 CGPA</label><br>
+    <input type="number" step="0.01" name="sem7" >
+
+    <label>Semester 8 CGPA</label><br>
+    <input type="number" step="0.01" name="sem8" >
+
+    <br><br>
+
+    <button type="submit">
+        Calculate CGPA
+    </button>
+
+</form>
+
+{% if result is not none %}
+
+<h2>
+    Overall CGPA: {{ "%.2f"|format(result) }}
+</h2>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
